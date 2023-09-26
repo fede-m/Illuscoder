@@ -1,0 +1,69 @@
+<!DOCTYPE <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <!-- <link rel = "stylesheet" href="css/styles.css"> -->
+        
+        <link href="https://fonts.cdnfonts.com/css/manga-temple" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        
+
+        <div class = "title-div">
+            <h1 class="app-name">Illuscoder</h1>
+        </div>
+        
+        <div class="chat-container">
+
+            <div id ="question-1" class = "question active typing-effect">What is your name?</div>
+            <input type="text" id = "answer-1" name="username" autocomplete="off" class="answer active" autofocus onkeydown="onEnter(event)"></input>
+
+            <div id ="question-2" class = "question" >What is the title of your story?</div>
+            <input type="text" id= "answer-2" name = "title" autocomplete="off" class="answer"autofocus onkeydown="onEnter(event)"></input>
+
+            <div id ="question-3" class = "question">What is the genre of your story?  [1] Fantasy [2] Adventure [3] Romantic [4] Horror</div>
+            <input type="text" id="answer-3" name = "genre" autocomplete="off" class="answer" autofocus onkeydown="onEnter(event)"></input>
+
+            <!-- FEDE For each character, provide a description and save it-->
+            <div id ="question-4" class = "question" >In which time does your story play? [1] Medieval [2] Future [3] Post-apocalyptic [4] Present</div>
+            <input type="text" id = "answer-4" name= "time" autocomplete="off" class="answer" autofocus onkeydown="onEnter(event)"></input>
+
+            <div id ="question-5" class = "question" >How many chapters does your story have?</div>
+            <input type="number" id = "answer-5" name="num_chap" autocomplete="off" class="answer" autofocus onkeydown="onEnter(event)"></input>
+
+            <div id ="question-6" class = "question">How many characters does your story have? (Max. 3)</div>
+            <input type="number" id= "answer-6" name = "num_char" autocomplete="off" class="answer" autofocus onkeydown="onEnter(event)"></input>
+
+            <div id = "characters-area"></div>
+            <!-- <div id = "question-7" class = "question chapter">Tell me the first chapter of your story ... </div> -->
+            <!-- <input type="text" id = "answer-7" name="first-chapter" autocomplete="off" class="answer" autofocus onkeydown="onEnter(event)"></input> -->
+            
+        </div>
+        <!-- FEDE Create as many chapters as indicated in num_chap!! -->
+        <div id = "chapter-area">
+            <h1 id = "title-chapter-1" class = "title-chapter">Chapter 1</h1>
+            <textarea id="chapter-1" placeholder="Start writing your story here..." class = "chapter"></textarea>
+            <div id = "button-section-1">
+                <button id = "generate-button-1" class = "generate_button" type = "button" onclick="generateImage()"> GENERATE </button>
+            </div>
+            <img id = "image-result-1" class = "image-results" src="{{gif_name}}" alt="Chapter 1">
+            <button id="next-chapter-1" class = "generate_button" type = "button" onclick="generateNextChapter()">NEXT CHAPTER</button>
+        </div>
+        <script src="{{ url_for('static', filename='index.js') }}"></script>
+        <!-- <script src="index.js"></script> -->
+    </body>
+</html>

@@ -1,0 +1,189 @@
+@import url('https://fonts.cdnfonts.com/css/manga-temple');
+body {
+    background-color: #222222;
+}
+
+@keyframes loading {
+    from{color:#22A39F;}
+    to {color: #FED049;}
+}
+
+.loading {
+    position: fixed;
+    top:-100%; right:-100%; left:-100%; bottom:-100%;
+    margin: auto;
+    z-index: 0;
+}
+
+
+h1 {
+    color: #22A39F;
+    font-family: "Manga Temple", sans-serif;
+}
+
+
+.app-name {
+    animation-name: loading;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+
+}
+
+.loading-app-name {
+    animation-name: loading;
+    animation-duration: 4s;
+}
+
+.title-div {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    margin-top: 50px;
+   
+    
+}
+
+.title-chapter{
+    display: none;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 250px;
+    height: 50px;
+
+}
+
+.title-chapter.active{
+    display: block;
+}
+
+.chapter {
+    display: none;
+    width: 83%;
+    height: 400px;
+    background-color: #434242;
+    color: #B2B2B2;
+    font-family: 'Courier New', Courier, monospace;
+    
+    padding: 20px 15px 20px 15px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+.chapter.active {
+    display:block;
+}
+
+.question {
+    display: none;
+    overflow: hidden;
+    margin-bottom: 10px;
+    
+  }
+
+.question.active {
+    display: block;
+     
+    /* typing 3.5s steps(10, end),
+    blink-caret .75s step-end; */
+    animation: 
+    typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms steps(44) infinite normal;
+    
+}
+
+/* .question.anim-typewriter{
+    animation: 
+    typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms steps(44) infinite normal;
+} */
+
+
+.answer {
+    display: none;
+    margin-bottom: 10px;
+    border:0;
+    background-color: #434242;
+    color: #B2B2B2;
+    font-family: 'Courier New', Courier, monospace;
+    caret-color: white;
+    
+
+
+  }
+
+.answer.active {
+    display: block;
+}
+
+.answer.description {
+    width: 100%;
+}
+
+.chat-container {
+    position: relative;
+    width: 80%;
+    height: 600px;
+    background-color: #434242;
+    color: #B2B2B2;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px 15px 20px 15px;
+    margin: auto;
+    border-radius: 10px;
+    
+}
+
+
+
+.button-section{
+    display: none;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+}
+
+.generate_button{
+    display: none;
+    width: 100px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #434242;
+    font-family: "Manga Temple", sans-serif;
+    background-color: #22A39F ;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: auto;
+}
+
+.button-section.active {
+    display: block;
+}
+
+.generate_button.active {
+    display: block;
+}
+
+.generate_button:hover{
+    background-color: #FED049;
+}
+
+.image-results{
+    display: none;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    margin-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.image-results.active{
+    display: block;
+}
+
+
+
